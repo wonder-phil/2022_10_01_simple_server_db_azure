@@ -44,7 +44,7 @@ data_query_table.insertData = (req, res) => {
 
     		});
 
-				request.query('INSERT INTO people (name, address, number) VALUES ("foo", "bar", 99)',
+				request.query('INSERT INTO people (name, address, number) VALUES (\'foo\', \'bar\', 99)',
 				function (err, recordset) {
 
 				    if (err) console.log(err)
