@@ -2,9 +2,10 @@ const sql = require('mssql');
 
 var config =
 {
-	host: 'myserver99.database.windows.net ',
+	host: 'myserver99.database.windows.net',
 	user: 'db99admin@myserver99',
 	password: '8suddsk!3',
+	server: 'myserver99.database.windows.net',
 	database: 'db99',
 	port: '1433'
 };
