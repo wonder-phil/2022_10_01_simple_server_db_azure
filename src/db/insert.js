@@ -1,4 +1,4 @@
-const mysql = require('mssql');
+const sql = require('mssql');
 
 var config =
 {
@@ -10,31 +10,27 @@ var config =
 	ssl: true
 };
 
-const conn = new mysql.createConnection(config);
-
-conn.connect(
-	function (err) {
-		if (err) {
-			console.log("!!! Cannot connect !!! Error:");
-			throw err;
-		}
-		else {
-			console.log("Connection established.");
-			readData();
-		}
-	});
-
+/*
+ * 'INSERT INTO people (name, address, number) VALUES (?, ?, ?);', ['orange', 'one university plaza', 154]
+ */
 function insertData(){
 
-		conn.query('INSERT INTO people (name, address, number) VALUES (?, ?, ?);', ['orange', 'one university plaza', 154],
-				 function (err, results, fields) {
-					 if (err) throw err;
-		 console.log('Inserted ' + results.affectedRows + ' row(s).');
-	 });
-	 }
+		// connect to your database
+    sql.connect(config, function (err) {
 
-	   conn.end(
-		   function (err) {
-				if (err) throw err;
-				else  console.log('Closing connection.')
-		})
+	    if (err) console.log(err);
+
+	        // create Request object
+	    var request = new sql.Request();
+
+	        // query to the database and get the records
+	    request.query('select * from people', function (err, recordset) {
+
+			    if (err) console.log(err)
+
+			            // send records as a response
+			    res.send(recordset);
+
+    		});
+	});
+}
