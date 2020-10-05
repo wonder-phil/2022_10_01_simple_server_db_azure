@@ -22,7 +22,7 @@ function no_cors_setup(res) {
 
 /*
  *
- * curl http://localhost:3001/insert?date=2020-05
+ * curl http://localhost:3001/insert?value=35
  * THE DATE IS NOT NECESSARY HERE - replace with name, number and address!!!
 */
 router.get('/insert', async (req,res, next) => {
