@@ -30,6 +30,8 @@ data_query_table.insertData = (req, res) => {
 
 			    if (err) console.log(err)
 
+					
+
 					for (i = 0; i < recordset.length; i++) {
 						console.log('Row: ' + JSON.stringify(recordset[i]));
 					}

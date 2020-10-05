@@ -29,7 +29,7 @@ router.get('/btc_date_equal', async (req,res, next) => {
 
 	console.log("date: " + req.query.date);
   let results = await db_insert.insertData(req,res);
-      res.json(results);
+      //res.json(results);
       res.json({ "test" : "value" } );
   } catch(e) {
     console.log(e);
