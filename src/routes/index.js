@@ -29,7 +29,7 @@ router.get('/insert', async (req,res, next) => {
   no_cors_setup(res);
   try {
 
-	console.log("date: " + req.query.date);
+	console.log("value: " + req.query.value);
   let results = await db_insert.insertData(req,res);
     console.log(results);
     res.json(results);
