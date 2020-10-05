@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/', apiRouter);
 
-const PORT = 1433;
+const PORT = 3001;
 const HOST = '0.0.0.0';
 app.listen(PORT, HOST, function() {
   console.log("... port %d in %s mode", PORT, app.settings.env);
