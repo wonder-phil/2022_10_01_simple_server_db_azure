@@ -10,10 +10,12 @@ var config =
 	ssl: true
 };
 
+let data_query_table = {};
+
 /*
  * 'INSERT INTO people (name, address, number) VALUES (?, ?, ?);', ['orange', 'one university plaza', 154]
  */
-function insertData(){
+data_query_table.insertData = (req, res) => {
 
 		// connect to your database
     sql.connect(config, function (err) {
@@ -51,3 +53,5 @@ function insertData(){
 	    		});
 	});
 }
+
+module.exports = data_query_table;
