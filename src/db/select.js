@@ -28,13 +28,13 @@ data_query_table.selectData = (req, res) => {
 	    var request = new sql.Request();
 			var result = "";
 	        // query to the database and get the records
-	   result = request.query('SELECT * FROM people;', function (err, recordset) {
+	   result = request.query('SELECT * FROM people;', function (err, data) {
 
 			    if (err) console.log(err)
 
-						console.log('recordset: ' + JSON.stringify(recordset[0]))
+						console.log('recordset: ' + JSON.stringify(data.recordset[0]))
 						for (i = 0; i < recordset.length; i++) {
-							console.log('Row: ' + JSON.stringify(recordset[i]));
+							console.log('Row: ' + JSON.stringify(data.recordset[i]));
 						}
 						console.log('Done.');
 
