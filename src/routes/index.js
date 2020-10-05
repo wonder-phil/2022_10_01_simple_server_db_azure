@@ -21,9 +21,31 @@ function no_cors_setup(res) {
 
 /*
  *
- * curl http://localhost:3001/btc_date_equal?date=2020-05
+ * curl http://localhost:3001/insert?date=2020-05
+ * THE DATE IS NOT NECESSARY HERE - replace with name, number and address!!!
 */
-router.get('/btc_date_equal', async (req,res, next) => {
+router.get('/insert', async (req,res, next) => {
+  no_cors_setup(res);
+  try {
+
+	console.log("date: " + req.query.date);
+  let results = await db_insert.insertData(req,res);
+    console.log(results);
+    res.json(results);
+
+  } catch(e) {
+    console.log(e);
+    console.log('Error in query');
+    console.log('--------------');
+    res.sendStatus(500);
+  }
+});
+
+/*
+ * Make this SELECT interesting by passing in values to query
+ */
+
+router.get('/select', async (req,res, next) => {
   no_cors_setup(res);
   try {
 

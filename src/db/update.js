@@ -2,37 +2,35 @@ const mysql = require('mysql');
 
 var config =
 {
-	host: 'mydemoserver.mysql.database.azure.com',
-	user: 'myadmin@mydemoserver',
-	password: 'your_password',
-	database: 'quickstartdb',
-	port: 3306,
-	ssl: true
+	host: 'myserver99.database.windows.net',
+	user: 'db99admin',
+	password: '8suddsk!3',
+	server: 'myserver99.database.windows.net',
+	database: 'db99',
+	port: 1433
 };
 
-const conn = new mysql.createConnection(config);
 
-conn.connect(
-	function (err) { 
-		if (err) { 
-			console.log("!!! Cannot connect !!! Error:");
-			throw err;
-		}
-		else {
-			console.log("Connection established.");
-			updateData();
-		}	
-	});
+let data_query_table = {};
 
-function updateData(){
-	   conn.query('UPDATE inventory SET quantity = ? WHERE name = ?', [200, 'banana'], 
-			function (err, results, fields) {
-				if (err) throw err;
-				else console.log('Updated ' + results.affectedRows + ' row(s).');
-	   	})
-	   conn.end(
-		   function (err) { 
-				if (err) throw err;
-				else  console.log('Done.') 
-		});
+
+/*
+ * Incomplete!
+*/
+data_query_table.insertData = (req, res) => {
+
+	 // connect to your database
+	 sql.connect(config, function (err) {
+
+		 if (err) console.log(err);
+
+				 // create Request object
+		 var request = new sql.Request();
+
+	 }
+
 };
+
+
+
+module.exports = data_query_table;
