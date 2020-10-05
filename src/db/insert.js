@@ -28,16 +28,16 @@ data_query_table.insertData = (req, res) => {
 	    var request = new sql.Request();
 
 			request.query('INSERT INTO people (name, address, number) VALUES (\'foo\', \'bar\', 99)',
-			function (err, recordset) {
+				function (err, recordset) {
 
-			    if (err) console.log(err)
+				    if (err) console.log(err)
 
-					console.log('Done.');
+						console.log('Done.');
 
-			            // send records as a response
-			    //res.send(recordset);
+				            // send records as a response
+				    //res.send(recordset);
 
-    		});
+	    		});
 	});
 }
 

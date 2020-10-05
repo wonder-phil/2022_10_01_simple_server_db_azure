@@ -56,8 +56,7 @@ router.get('/select', async (req,res, next) => {
 
 	console.log("value: " + req.query.value);
   let results = await db_select.selectData(req,res);
-      //res.json(results);
-      res.json({ "test" : "value" } );
+      res.json(results);
   } catch(e) {
     console.log(e);
     console.log('Error in query');
