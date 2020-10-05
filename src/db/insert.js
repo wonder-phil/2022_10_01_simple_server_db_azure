@@ -6,7 +6,7 @@ var config =
 	user: 'db99admin@myserver99',
 	password: '8suddsk!3',
 	database: 'db99',
-	port: 3306,
+	port: 1433,
 	ssl: true
 };
 
