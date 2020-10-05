@@ -44,7 +44,6 @@ data_query_table.selectData = (req, res) => {
     		});
 				console.log(result);
 	});
-	sql.close();
 }
 
 module.exports = data_query_table;
