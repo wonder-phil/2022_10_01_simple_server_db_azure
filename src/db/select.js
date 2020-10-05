@@ -28,7 +28,7 @@ data_query_table.selectData = (req, res) => {
 	    var request = new sql.Request();
 			var result = "";
 	        // query to the database and get the records
-	   result = request.query('SELECT * FROM dbo.people', function (err, recordset) {
+	   result = request.query('SELECT * FROM people;', function (err, recordset) {
 
 			    if (err) console.log(err)
 
@@ -44,6 +44,7 @@ data_query_table.selectData = (req, res) => {
     		});
 				console.log(result);
 	});
+	sql.close();
 }
 
 module.exports = data_query_table;
