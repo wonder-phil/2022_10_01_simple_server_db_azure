@@ -7,7 +7,7 @@ var config =
 	password: '8suddsk!3',
 	server: 'myserver99.database.windows.net',
 	database: 'db99',
-	port: '1433'
+	port: 1433
 };
 
 // ssl: true
