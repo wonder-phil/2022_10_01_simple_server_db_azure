@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../db');
+const db_insert = require('../db/insert');
 const router = express.Router();
 
 function no_cors_setup(res) {
@@ -28,7 +28,8 @@ router.get('/btc_date_equal', async (req,res, next) => {
   try {
 
 	console.log("date: " + req.query.date);
-
+  let results = await db.insertData();
+      res.json(results);
       res.json({ "test" : "value" } );
   } catch(e) {
     console.log(e);

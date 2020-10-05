@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 var config =
 {
-	host: 'mydemoserver.mysql.database.azure.com',
-	user: 'myadmin@mydemoserver',
-	password: 'your_password',
-	database: 'quickstartdb',
+	host: 'myserver99.database.windows.net ',
+	user: 'db99admin@myserver99',
+	password: '8suddsk!3',
+	database: 'db99',
 	port: 3306,
 	ssl: true
 };
