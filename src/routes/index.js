@@ -1,5 +1,6 @@
 const express = require('express');
 const db_insert = require('../db/insert');
+const db_select = require('../db/select');
 const router = express.Router();
 
 function no_cors_setup(res) {
@@ -50,7 +51,7 @@ router.get('/select', async (req,res, next) => {
   try {
 
 	console.log("date: " + req.query.date);
-  let results = await db_insert.insertData(req,res);
+  let results = await db_select.selectData(req,res);
       //res.json(results);
       res.json({ "test" : "value" } );
   } catch(e) {
