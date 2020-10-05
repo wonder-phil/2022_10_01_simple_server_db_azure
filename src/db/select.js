@@ -32,17 +32,16 @@ data_query_table.selectData = (req, res) => {
 
 			    if (err) console.log(err)
 
-						console.log('recordset: ' + JSON.stringify(data.recordset[0]))
-						for (i = 0; i < recordset.length; i++) {
-							console.log('Row: ' + JSON.stringify(data.recordset[i]));
-						}
-						console.log('Done.');
+					for (i = 0; i < data.recordset.length; i++) {
+						console.log('Row: ' + JSON.stringify(data.recordset[i]));
+					}
+					console.log('Done.');
 
 			            // send records as a response
 			    //res.send(recordset);
 
     		});
-				console.log(result);
+				//console.log(result);
 	});
 }
 
