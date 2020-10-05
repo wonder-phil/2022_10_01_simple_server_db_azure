@@ -6,9 +6,10 @@ var config =
 	user: 'db99admin@myserver99',
 	password: '8suddsk!3',
 	database: 'db99',
-	port: 1433,
-	ssl: true
+	port: '1433'
 };
+
+// ssl: true
 
 let data_query_table = {};
 
@@ -30,7 +31,7 @@ data_query_table.insertData = (req, res) => {
 
 			    if (err) console.log(err)
 
-					
+
 
 					for (i = 0; i < recordset.length; i++) {
 						console.log('Row: ' + JSON.stringify(recordset[i]));
