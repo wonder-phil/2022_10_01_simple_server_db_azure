@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 var config =
 {
-	host: 'mydemoserver.mysql.database.azure.com',
+	host: 'myserver99.database.windows.net ',
 	user: 'myadmin@mydemoserver',
 	password: 'your_password',
 	database: 'quickstartdb',
@@ -13,19 +13,19 @@ var config =
 const conn = new mysql.createConnection(config);
 
 conn.connect(
-	function (err) { 
-		if (err) { 
+	function (err) {
+		if (err) {
 			console.log("!!! Cannot connect !!! Error:");
 			throw err;
 		}
 		else {
 			console.log("Connection established.");
 			readData();
-		}	
+		}
 	});
 
 function readData(){
-		conn.query('SELECT * FROM inventory', 
+		conn.query('SELECT * FROM inventory',
 			function (err, results, fields) {
 				if (err) throw err;
 				else console.log('Selected ' + results.length + ' row(s).');
@@ -35,8 +35,8 @@ function readData(){
 				console.log('Done.');
 			})
 	   conn.end(
-		   function (err) { 
+		   function (err) {
 				if (err) throw err;
-				else  console.log('Closing connection.') 
+				else  console.log('Closing connection.')
 		});
 };

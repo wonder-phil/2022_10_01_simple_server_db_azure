@@ -28,7 +28,7 @@ router.get('/btc_date_equal', async (req,res, next) => {
   try {
 
 	console.log("date: " + req.query.date);
-  let results = await db.insertData();
+  let results = await db_insert.insertData();
       res.json(results);
       res.json({ "test" : "value" } );
   } catch(e) {
