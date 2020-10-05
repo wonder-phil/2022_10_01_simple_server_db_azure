@@ -27,34 +27,17 @@ data_query_table.insertData = (req, res) => {
 	        // create Request object
 	    var request = new sql.Request();
 
-	        // query to the database and get the records
-	    request.query('select * from people', function (err, recordset) {
+			request.query('INSERT INTO people (name, address, number) VALUES (\'foo\', \'bar\', 99)',
+			function (err, recordset) {
 
 			    if (err) console.log(err)
 
-
-
-					for (i = 0; i < recordset.length; i++) {
-						console.log('Row: ' + JSON.stringify(recordset[i]));
-					}
 					console.log('Done.');
 
 			            // send records as a response
 			    //res.send(recordset);
 
     		});
-
-				request.query('INSERT INTO people (name, address, number) VALUES (\'foo\', \'bar\', 99)',
-				function (err, recordset) {
-
-				    if (err) console.log(err)
-
-						console.log('Done.');
-
-				            // send records as a response
-				    //res.send(recordset);
-
-	    		});
 	});
 }
 
