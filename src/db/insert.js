@@ -40,7 +40,7 @@ data_query_table.insertData = (req, res) => {
 					console.log('Done.');
 
 			            // send records as a response
-			    res.send(recordset);
+			    //res.send(recordset);
 
     		});
 
@@ -52,7 +52,7 @@ data_query_table.insertData = (req, res) => {
 						console.log('Done.');
 
 				            // send records as a response
-				    res.send(recordset);
+				    //res.send(recordset);
 
 	    		});
 	});
