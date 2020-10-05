@@ -46,11 +46,15 @@ router.get('/insert', async (req,res, next) => {
  * Make this SELECT interesting by passing in values to query
  */
 
+ /*
+  * curl http://localhost:3001/select?value=my_name
+ */
+
 router.get('/select', async (req,res, next) => {
   no_cors_setup(res);
   try {
 
-	console.log("date: " + req.query.date);
+	console.log("value: " + req.query.value);
   let results = await db_select.selectData(req,res);
       //res.json(results);
       res.json({ "test" : "value" } );

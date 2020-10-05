@@ -32,6 +32,7 @@ data_query_table.selectData = (req, res) => {
 
 			    if (err) console.log(err)
 
+					console.log('recordset: ' + JSON.stringify(recordset[0]))
 					for (i = 0; i < recordset.length; i++) {
 						console.log('Row: ' + JSON.stringify(recordset[i]));
 					}
