@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const mysql = require('mssql');
 
 var config =
 {
@@ -30,12 +30,11 @@ function insertData(){
 				 function (err, results, fields) {
 					 if (err) throw err;
 		 console.log('Inserted ' + results.affectedRows + ' row(s).');
-		 })
+	 });
 	 }
 
 	   conn.end(
 		   function (err) {
 				if (err) throw err;
 				else  console.log('Closing connection.')
-		});
-};
+		})
