@@ -22,8 +22,9 @@ function no_cors_setup(res) {
 
 /*
  *
- * curl http://localhost:3001/insert?value=35
- * THE DATE IS NOT NECESSARY HERE - replace with name, number and address!!!
+ * 
+ * curl "http://localhost:3001/insert?id=2&name=Phil&address=Stamford_CT"
+ *
 */
 router.get('/insert', async (req,res, next) => {
   no_cors_setup(res);
@@ -47,6 +48,7 @@ router.get('/insert', async (req,res, next) => {
  */
 
  /*
+  * 
   * curl http://localhost:3001/select?value=my_name
  */
 
