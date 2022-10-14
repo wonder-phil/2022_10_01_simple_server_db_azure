@@ -2,11 +2,11 @@ const sql = require('mssql');
 
 var config =
 {
-	host: 'myserver99.database.windows.net',
-	user: 'db99admin',
-	password: '8suddsk!3',
-	server: 'myserver99.database.windows.net',
-	database: 'db99',
+	host: 'pgb3.database.windows.net',
+	user: 'pgb',
+	password: 'SDOld0!mf;',
+	server: 'pgb3.database.windows.net',
+	database: 'pgb',
 	port: 1433
 };
 
@@ -26,8 +26,9 @@ data_query_table.insertData = (req, res) => {
 
 	        // create Request object
 	    var request = new sql.Request();
-
-			request.query('INSERT INTO people (name, address, number) VALUES (\'foo\', \'bar\', 99)',
+		str = 'INSERT INTO people (id, name, address) VALUES (' + req.query.id + ',\'' + req.query.name + '\',\'' + req.query.address + '\')';
+		console.log(str);
+		request.query(str,
 				function (err, recordset) {
 
 				    if (err) console.log(err)

@@ -2,11 +2,11 @@ const sql = require('mssql');
 
 var config =
 {
-	host: 'myserver99.database.windows.net',
-	user: 'db99admin',
-	password: '8suddsk!3',
-	server: 'myserver99.database.windows.net',
-	database: 'db99',
+	host: 'pgb3.database.windows.net',
+	user: 'pgb',
+	password: 'SDOld0!mf;',
+	server: 'pgb3.database.windows.net',
+	database: 'pgb',
 	port: 1433
 };
 
@@ -26,9 +26,12 @@ data_query_table.selectData = (req, res) => {
 
 	        // create Request object
 	    var request = new sql.Request();
-			var result = "";
-	        // query to the database and get the records
-	   result = request.query('SELECT * FROM people;', function (err, data) {
+		var result = "";
+		console.log("Value: ", req.query.value);
+		str = 'SELECT * FROM people WHERE id=' + req.query.value;
+		console.log(str);
+		// query to the database and get the records
+		result = request.query(str , function (err, data) {
 
 			    if (err) console.log(err)
 
