@@ -5,10 +5,10 @@
 const sql = require('mssql');
 
 const config = {
-  host: 'pgbsql.database.windows.net',
-	user: 'azureuser',
-	password: 'njdoikm34d@',
-	server: 'pgbsql.database.windows.net',
+  host: 'pgbssdasdql.database.windows.net',
+	user: 'azudddreuser',
+	password: 'njt56ffm34d@',
+	server: 'pgbsql33a.database.windows.net',
 	database: 'people',
 	port: 1433,
     authentication: {
